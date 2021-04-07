@@ -19,6 +19,57 @@
   color: #dba159;
 }
 
+h2 {
+  font-size: 0.1em;
+}
+
+.about {
+  text-align: left;
+  padding-inline: 2.5em;
+  padding-top: 1em;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto auto auto;
+  grid-template-areas:
+    "header header header "
+    " para para para"
+    " link1 link2 link3"
+    " extra extra extra";
+}
+
+.about h2 {
+  grid-area: header;
+}
+
+.about a {
+  color: #99d19c;
+}
+
+.about a:hover {
+  color: #dba159;
+}
+
+.about .aboutInfo {
+  font-size: 1em;
+  grid-area: para;
+}
+
+.about .link1 {
+  grid-area: link1;
+  margin-bottom: 1em;
+}
+.about .link2 {
+  grid-area: link2;
+  margin-bottom: 1em;
+}
+.about .link3 {
+  grid-area: link3;
+  margin-bottom: 1em;
+}
+.about .aboutFooter {
+  grid-area: extra;
+  padding-top: 5em;
+}
 .navbar-container {
   background-color: #605b56;
   width: 100%;
@@ -27,7 +78,7 @@
 
 .nav-text {
   color: #dba159;
-  font-size: 0.5em;
+  font-size: 1em;
   text-align: left;
 }
 
