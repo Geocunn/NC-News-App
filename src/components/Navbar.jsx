@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Nav from "react-bootstrap/Nav";
+
 class componentName extends Component {
   render() {
     return (
@@ -10,12 +11,12 @@ class componentName extends Component {
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className="nav-box">
-          <Nav.Link href="/Articles" className="nav-text">
+          <Nav.Link href="/articles" className="nav-text">
             Latest
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className="nav-box">
-          <Nav.Link href="/Categories" className="nav-text">
+          <Nav.Link href="/categories" className="nav-text">
             Categories
           </Nav.Link>
         </Nav.Item>

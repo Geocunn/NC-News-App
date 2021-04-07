@@ -38,7 +38,10 @@ class Home extends Component {
         </a>
         <p className="aboutFooter">
           This project was created be George Cunnningham. For more info, please
-          visit my website at <a href="https://geocunn.co.uk">geocunn.co.uk</a>
+          visit my website at{" "}
+          <a href="https://geocunn.co.uk" target="_blank" rel="noreferrer">
+            geocunn.co.uk
+          </a>
         </p>
       </div>
     );

@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Articles from "./components/Articles.jsx";
 import Home from "./components/Home.jsx";
+import ArticlePage from "./components/ArticlePage.jsx";
 
 function App() {
   return (
@@ -14,12 +15,9 @@ function App() {
       <Navbar />
       <Router>
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/Articles">
-            <Articles />
-          </Route>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/articles" component={Articles} />
+          <Route exact path="/articles/:article_id" component={ArticlePage} />
         </Switch>
       </Router>
     </div>

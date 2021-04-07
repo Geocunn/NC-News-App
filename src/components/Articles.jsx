@@ -8,7 +8,9 @@ class Articles extends Component {
   };
 
   componentDidMount = () => {
-    fetch("https://nc-news-geocunn.herokuapp.com/api/articles")
+    fetch(
+      "https://nc-news-geocunn.herokuapp.com/api/articles?sort_by=created_at&order=desc"
+    )
       .then((response) => response.json())
       .then((data) => {
         const newState = { articles: data.articles, loading: false };
@@ -23,7 +25,13 @@ class Articles extends Component {
     return (
       <ul>
         {this.state.articles.map((article, index) => {
-          return <ArticleCard key={article.article_id} information={article} />;
+          return (
+            <ArticleCard
+              key={article.article_id}
+              information={article}
+              number={index % 3}
+            />
+          );
         })}
       </ul>
     );

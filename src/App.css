@@ -106,6 +106,8 @@ ul {
   height: 10em;
   margin-inline: auto;
   margin-block: 2em;
+  border: 2px solid #605b56;
+  background-color: #837a75;
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -114,6 +116,12 @@ ul {
     "pic timeCreated"
     "pic nothing"
     "pic info";
+  color: #35312e;
+}
+
+.articleCard:hover {
+  text-decoration: none;
+  color: #99d19c;
 }
 
 .articleCard h3 {
@@ -125,14 +133,77 @@ ul {
 }
 
 .articleCard h4 {
-  font-size: 0.5em;
+  font-size: 0.7em;
   grid-area: timeCreated;
   align-self: start;
   text-align: left;
 }
 
-.articelCard img {
+.articleCard img {
   grid-area: pic;
-  width: 50px;
-  height: 50px;
+  height: 9em;
+  width: 9em;
+  justify-self: center;
+  align-self: center;
+  border: 2px solid #605b56;
+}
+
+.articleCard .extraInfo {
+  grid-area: info;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1em;
+}
+
+.commentsLink {
+  color: #99d19c;
+  grid-area: comments;
+}
+
+.commentsLink:hover {
+  color: #dba159;
+}
+
+.articlePage {
+  margin-inline: 5em;
+  text-align: left;
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "cat id"
+    "title title"
+    "time time"
+    "body body"
+    "author author"
+    "comments comments";
+}
+
+.articleTitle {
+  text-align: left;
+  grid-area: title;
+}
+
+.articleCat {
+  font-size: 1em;
+  grid-area: cat;
+}
+
+.articleId {
+  grid-area: id;
+  text-align: right;
+}
+
+.articleBody {
+  grid-area: body;
+}
+
+.articleAuthor {
+  grid-area: author;
+  margin-bottom: 0.2em;
+}
+
+.articleDate {
+  grid-area: time;
+  text-align: left;
 }
