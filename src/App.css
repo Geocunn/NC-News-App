@@ -95,3 +95,44 @@ h2 {
 .nav-box:hover {
   background-color: #837a75;
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.articleCard {
+  width: 30em;
+  height: 10em;
+  margin-inline: auto;
+  margin-block: 2em;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "pic title"
+    "pic timeCreated"
+    "pic nothing"
+    "pic info";
+}
+
+.articleCard h3 {
+  font-size: 1em;
+  margin-bottom: 0;
+  grid-area: title;
+  align-self: end;
+  text-align: left;
+}
+
+.articleCard h4 {
+  font-size: 0.5em;
+  grid-area: timeCreated;
+  align-self: start;
+  text-align: left;
+}
+
+.articelCard img {
+  grid-area: pic;
+  width: 50px;
+  height: 50px;
+}
