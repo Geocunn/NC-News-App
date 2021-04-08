@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import * as api from "../api";
 
 class ArticlePage extends Component {
   state = {
@@ -7,16 +8,12 @@ class ArticlePage extends Component {
   };
 
   componentDidMount = () => {
-    fetch(
-      `https://nc-news-geocunn.herokuapp.com/api/articles/${this.props.match.params.article_id}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        const newState = { article: data.article, loading: false };
-
-        this.setState(newState);
-      });
+    api.getArticle(this.props.match.params.article_id).then((article) => {
+      const newState = { article: article, loading: false };
+      this.setState(newState);
+    });
   };
+
   render() {
     const isLoading = this.state.loading;
     if (isLoading) return <p>Loading...</p>;
@@ -35,12 +32,16 @@ class ArticlePage extends Component {
               .split(".")[0]
           }
         </p>
-        <a href="/articles/:article_id/comments" className="commentsLink">
+        <a
+          href={`/articles/${this.state.article[0].article_id}/comments`}
+          className="commentsLink"
+        >
           {this.state.article[0].comment_count} Comments
         </a>
         <p className="articleId">
           Article Id : {this.state.article[0].article_id}
         </p>
+        <p className="articleVotes">Votes: {this.state.article[0].votes}</p>
       </div>
     );
   }

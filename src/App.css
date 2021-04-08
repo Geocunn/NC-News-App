@@ -173,10 +173,10 @@ ul {
   grid-template-areas:
     "cat id"
     "title title"
-    "time time"
+    "time votes"
     "body body"
     "author author"
-    "comments comments";
+    "comments empty";
 }
 
 .articleTitle {
@@ -206,4 +206,54 @@ ul {
 .articleDate {
   grid-area: time;
   text-align: left;
+}
+
+.articleVotes {
+  grid-area: votes;
+  text-align: right;
+}
+
+.commentSection {
+  margin-inline: 5em;
+  text-align: left;
+}
+
+.comment {
+  margin-block: 5em;
+  display: grid;
+  grid-template-rows: auto auto 1.5em;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "user time time time time"
+    "body body body body body"
+    "empty empty up votes down";
+}
+
+.commentUser {
+  grid-area: user;
+  font-size: 1em;
+}
+
+.commentBody {
+  grid-area: body;
+}
+
+.commentUpButton {
+  grid-area: up;
+}
+
+.commentDownButton {
+  grid-area: down;
+}
+
+.commentVotes {
+  grid-area: votes;
+  margin: 0;
+  align-self: center;
+  justify-self: center;
+}
+
+.commentTime {
+  grid-area: time;
+  text-align: right;
 }

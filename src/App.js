@@ -4,9 +4,10 @@ import Title from "./components/Title.jsx";
 import React from "react";
 import Navbar from "./components/Navbar.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Articles from "./components/Articles.jsx";
+import ArticlesList from "./components/ArticlesList.jsx";
 import Home from "./components/Home.jsx";
 import ArticlePage from "./components/ArticlePage.jsx";
+import ArticleComments from "./components/ArticleComments.jsx";
 
 function App() {
   return (
@@ -16,8 +17,13 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/articles" component={Articles} />
+          <Route exact path="/articles" component={ArticlesList} />
           <Route exact path="/articles/:article_id" component={ArticlePage} />
+          <Route
+            exact
+            path="/articles/:article_id/comments"
+            component={ArticleComments}
+          />
         </Switch>
       </Router>
     </div>

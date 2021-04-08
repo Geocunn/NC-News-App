@@ -1,22 +1,18 @@
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard.jsx";
+import * as api from "../api";
 
-class Articles extends Component {
+class ArticlesList extends Component {
   state = {
     articles: [],
     loading: true,
   };
 
   componentDidMount = () => {
-    fetch(
-      "https://nc-news-geocunn.herokuapp.com/api/articles?sort_by=created_at&order=desc"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        const newState = { articles: data.articles, loading: false };
-
-        this.setState(newState);
-      });
+    api.fetchArticles().then((articles) => {
+      const newState = { articles: articles, loading: false };
+      this.setState(newState);
+    });
   };
 
   render() {
@@ -38,4 +34,4 @@ class Articles extends Component {
   }
 }
 
-export default Articles;
+export default ArticlesList;
