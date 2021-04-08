@@ -27,7 +27,6 @@ const ArticleCard = (props) => {
 
   let topic = props.information.topic;
 
-  console.log(props.index);
   return (
     <a
       className="articleCard"

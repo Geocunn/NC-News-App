@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../api";
+import ArticleVoteHandler from "./ArticleVoteHandler";
 
 class ArticlePage extends Component {
   state = {
@@ -41,7 +42,11 @@ class ArticlePage extends Component {
         <p className="articleId">
           Article Id : {this.state.article[0].article_id}
         </p>
-        <p className="articleVotes">Votes: {this.state.article[0].votes}</p>
+        <ArticleVoteHandler
+          className="articleVotes"
+          votes={this.state.article[0].votes}
+          article_id={this.state.article[0].article_id}
+        />
       </div>
     );
   }

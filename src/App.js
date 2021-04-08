@@ -7,7 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ArticlesList from "./components/ArticlesList.jsx";
 import Home from "./components/Home.jsx";
 import ArticlePage from "./components/ArticlePage.jsx";
-import ArticleComments from "./components/ArticleComments.jsx";
+import CommentsList from "./components/CommentsList.jsx";
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
           <Route
             exact
             path="/articles/:article_id/comments"
-            component={ArticleComments}
+            component={CommentsList}
           />
         </Switch>
       </Router>

@@ -24,6 +24,10 @@ export const getArticleComments = (article_id) => {
     });
 };
 
-export const changeVotes = (comment_id, increment) => {
+export const changeVotesComment = (comment_id, increment) => {
   return request.patch(`/comments/${comment_id}`, { inc_votes: increment });
+};
+
+export const changeVotesArticle = (article_id, increment) => {
+  return request.patch(`/articles/${article_id}`, { inc_votes: increment });
 };
