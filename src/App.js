@@ -8,6 +8,7 @@ import ArticlesList from "./components/ArticlesList.jsx";
 import Home from "./components/Home.jsx";
 import ArticlePage from "./components/ArticlePage.jsx";
 import CommentsList from "./components/CommentsList.jsx";
+import TopicsList from "./components/TopicsList.jsx";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             path="/articles/:article_id/comments"
             component={CommentsList}
           />
+          <Route exact path="/categories" component={TopicsList} />
         </Switch>
       </Router>
     </div>

@@ -22,21 +22,21 @@ class CommentVoteHandler extends Component {
     return (
       <div className="commentVoteChanger">
         <Button
-          className="commentUpButton"
-          onClick={() => this.updateVotes(comment_id, 1)}
-          size="sm"
-          variant="info"
-        >
-          +
-        </Button>
-        <p className="commentVotes">{votes + voteChanges}</p>
-        <Button
           className="commentDownButton"
           onClick={() => this.updateVotes(comment_id, -1)}
           size="sm"
           variant="warning"
         >
           -
+        </Button>
+        <p className="commentVotes">{votes + voteChanges}</p>
+        <Button
+          className="commentUpButton"
+          onClick={() => this.updateVotes(comment_id, 1)}
+          size="sm"
+          variant="info"
+        >
+          +
         </Button>
       </div>
     );

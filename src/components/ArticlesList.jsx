@@ -6,6 +6,8 @@ class ArticlesList extends Component {
   state = {
     articles: [],
     loading: true,
+    query: "",
+    filter: "",
   };
 
   componentDidMount = () => {
@@ -18,6 +20,7 @@ class ArticlesList extends Component {
   render() {
     const isLoading = this.state.loading;
     if (isLoading) return <p>Loading...</p>;
+    console.log(this.state);
     return (
       <ul>
         {this.state.articles.map((article, index) => {

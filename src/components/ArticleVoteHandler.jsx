@@ -22,21 +22,21 @@ class ArticleVoteHandler extends Component {
     return (
       <div className="articleVoteChanger">
         <Button
-          className="articleUpButton"
-          onClick={() => this.updateVotes(article_id, 1)}
-          size="sm"
-          variant="info"
-        >
-          +
-        </Button>
-        <p className="articleVotes">Votes : {votes + voteChanges}</p>
-        <Button
           className="articleDownButton"
           onClick={() => this.updateVotes(article_id, -1)}
           size="sm"
           variant="warning"
         >
           -
+        </Button>
+        <p className="articleVotes">Votes : {votes + voteChanges}</p>
+        <Button
+          className="articleUpButton"
+          onClick={() => this.updateVotes(article_id, 1)}
+          size="sm"
+          variant="info"
+        >
+          +
         </Button>
       </div>
     );

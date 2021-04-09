@@ -31,3 +31,17 @@ export const changeVotesComment = (comment_id, increment) => {
 export const changeVotesArticle = (article_id, increment) => {
   return request.patch(`/articles/${article_id}`, { inc_votes: increment });
 };
+
+export const fetchTopics = () => {
+  return request.get(`/topics`).then(({ data }) => {
+    return data.topics;
+  });
+};
+
+export const fetchFilteredTopics = (filter) => {
+  return request
+    .get(`/articles`, { params: { topic: filter } })
+    .then(({ data }) => {
+      return data.articles;
+    });
+};
